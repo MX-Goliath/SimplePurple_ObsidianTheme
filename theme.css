@@ -1,0 +1,644 @@
+/* updated snippet for version 1.6.3 */
+/* Стили для заголовков H1 */
+/* Пример оформления h1 в режиме предпросмотра Obsidian */
+/* ------------------------------
+ *   H1 в режиме предпросмотра
+ * ------------------------------ */
+/* -- H1 в Preview Mode (красивая полоса на всю ширину) -- */
+/* -- H1 в Preview Mode -- */
+.markdown-preview-view h1 {
+  display: block;
+  color: #b778ff;
+  border-bottom: 2px solid #b778ff;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.25rem;
+}
+
+/* -- H1 в Live Preview / Редакторе -- */
+.cm-content .cm-header-1 {
+  display: block;
+  color: #b778ff !important;
+  border-bottom: 2px solid #b778ff !important;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.25rem;
+}
+
+/* -- Скрываем служебные # в редакторе -- */
+.cm-content .cm-header-1 .cm-formatting-header {
+  display: none;  /* Не отображать решётки */
+}
+
+
+/* ------------------------------
+ *   H2 в режиме предпросмотра
+ * ------------------------------ */
+/* -- H1 в Preview Mode (красивая полоса на всю ширину) -- */
+/* -- H1 в Preview Mode -- */
+.markdown-preview-view h2 {
+  display: block;
+  color: #8f6aff;
+  border-bottom: 2px solid #8f6aff;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.25rem;
+}
+
+/* -- H1 в Live Preview / Редакторе -- */
+.cm-content .cm-header-2 {
+  display: block;
+  color: #8f6aff !important;
+  border-bottom: 2px solid #8f6aff !important;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.25rem;
+}
+
+/*/* -- Скрываем служебные # в редакторе --
+.cm-content .cm-header-2 .cm-formatting-header {
+  display: none;
+}*/
+
+
+
+
+/* Скругление краев изображений */
+img {
+  border-radius: 10px;
+}
+/* ====== Общие переменные (по желанию) ====== */
+:root {
+  --radius: 10px; /* Степень скругления */
+}
+
+/*
+ *  ====== Элементы UI со скруглёнными углами ======
+ */
+.workspace-leaf,
+.workspace-leaf-content,
+.view-header,
+.side-dock,
+.nav-file,
+.nav-action,
+.nav-file-title,
+.nav-folder-title,
+.cm-tooltip,
+.suggestion-container,
+.dropdown,
+.menu,
+.popover,
+.modal,
+.workspace-ribbon {
+  border-radius: var(--radius) !important;
+}
+
+/*
+ *  Всплывающие окна, контекстные меню, подсказки:
+ */
+.menu .menu-item,
+.dropdown .menu-item,
+.suggestion-container .suggestion,
+.cm-tooltip .suggestion {
+  border-radius: var(--radius) !important;
+}
+
+/*
+ *  Вкладки и панели:
+ */
+.workspace-tab-header,
+.workspace-tab-header-container,
+.workspace-tab-header-inner,
+.workspace-tab-container {
+  border-radius: var(--radius) !important;
+}
+
+/*
+ *  Кнопки в ленте:
+ */
+.workspace-ribbon .workspace-ribbon-action {
+  border-radius: var(--radius) !important;
+}
+
+
+/* Скругление краев эдитора*/
+/*
+ a *uthor: sai1494
+ source: https://discord.com/channels/686053708261228577/744933215063638183/1034885176968347668
+ */
+
+html * {
+  --titlebar-background: transparent !important;
+  --titlebar-background-focused: transparent !important;
+  --ribbon-background: transparent !important;
+  --ribbon-background-collapsed: transparent !important;
+  --collapsed-right-margin: 24px;
+}
+
+.workspace {
+  background-color: var(--background-secondary);
+}
+
+/*.workspace-ribbon,
+.workspace-leaf-resize-handle {
+  border: none !important;
+}*/
+
+.workspace-leaf {
+  border-radius: 8px;
+  border: 0;
+}
+
+/* Adding border to the main workspace leaf */
+.mod-root .workspace-leaf {
+  border: 1px solid var(--divider-color);
+
+  /* contain is to fix the border-right getting cut off when right collapsed */
+  contain: size !important;
+}
+
+/* contain is to fix the border-right getting cut off when right collapsed */
+.workspace-split.mod-root .view-content {
+  background-color: inherit !important;
+}
+
+.mod-root .view-content {
+  border-top: 1px solid var(--divider-color);
+}
+
+/* This is the gap between split workspaces */
+.workspace-split {
+  background-color: transparent !important;
+  gap: 0px 8px;
+}
+
+/* .workspace-split.mod-root {
+ * gap: 8px;
+ } * */
+
+body .mod-right-split {
+  --background-secondary: initial !important;
+}
+
+/*.workspace-tab-header-container {
+  background-color: var(--background-secondary);
+  border-bottom: initial;
+}*/
+
+.workspace-tab-header.is-active {
+  box-shadow: initial;
+}
+
+
+.workspace-ribbon.mod-left.is-collapsed {
+  --titlebar-background-focused: transparent !important;
+}
+
+
+
+/* Fixing indent guides alignment in reader mode */
+.markdown-rendered.show-indentation-guide li > ul::before,
+.markdown-rendered.show-indentation-guide li > ol::before {
+  left: -12px;
+}
+
+/* Used to apply a right margin when the right sidebar is collapsed */
+.workspace:not(.is-right-sidedock-open) > .mod-root {
+  margin-right: var(--collapsed-right-margin) !important;
+}
+
+.workspace:not(.is-right-sidedock-open) * .sidebar-toggle-button {
+  margin-right: calc(0px - var(--collapsed-right-margin)) !important;
+}
+
+.mod-root .workspace-tab-header-container:after {
+  margin-right: calc(0px - var(--collapsed-right-margin));
+}
+
+
+/* Fix tag misalignment */
+.cm-hashtag-begin {
+  display: inline-block;
+  line-height: unset !important;
+}
+
+/* Fix tag misalignment */
+.cm-hashtag-end {
+  display: inline-block;
+}
+
+/* Font clarity adjustment */
+body {
+  word-spacing: -0.04rem;
+  letter-spacing: 0.01rem;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+
+/* Выделение кода */
+.markdown-rendered pre {
+  border-left: solid;
+}
+
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
+  border-left: solid;
+}
+
+
+
+/* Выделение цветом иконок боковой панели */
+/*
+ a *uthor: sailKite
+ source: https://discord.com/channels/686053708261228577/702656734631821413/1147201536171196416
+ */
+
+
+
+
+/* Скругление краев таблиц */
+:root table {
+  --table-border-radius: 8px;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+/* Add the radius */
+th:first-child {border-top-left-radius: var(--table-border-radius)}
+th:last-child {border-top-right-radius: var(--table-border-radius)}
+tr:last-child td:first-child {border-bottom-left-radius: var(--table-border-radius)}
+tr:last-child td:last-child {border-bottom-right-radius: var(--table-border-radius)}
+
+/* Redo the borders */
+:root :is(td, th) {
+  border-width: 0 var(--table-border-width) var(--table-border-width) 0;
+}
+
+/* Радужное раскрашивание */
+/*
+.nav-folder-children > .nav-folder,
+.nav-files-container > div > .nav-folder {
+  background-color: var(--folder-color);
+  --nav-item-color: black;
+  --nav-item-color-hover: black;
+  --nav-collapse-icon-color: black;
+  --nav-item-color-active: black;
+  border-radius: 10px;
+}
+.nav-folder-children > .nav-folder,
+.nav-files-container > div > .nav-folder:hover {
+  filter: brightness(0.9);
+}
+.nav-folder-children > .nav-folder,
+.nav-files-container > div > .nav-folder:nth-child(11n + 2) {
+  --folder-color: rgb(243, 139, 168);
+}
+.nav-folder-children > .nav-folder,
+.nav-files-container > div > .nav-folder:nth-child(11n + 3) {
+  --folder-color: rgb(235, 160, 172);
+}
+.nav-folder-children > .nav-folder,
+.nav-files-container > div > .nav-folder:nth-child(11n + 4) {
+  --folder-color: rgb(250, 179, 135);
+}
+.nav-folder-children > .nav-folder,
+.nav-files-container > div > .nav-folder:nth-child(11n + 5) {
+  --folder-color: rgb(249, 226, 175);
+}
+.nav-folder-children > .nav-folder,
+.nav-files-container > div > .nav-folder:nth-child(11n + 6) {
+  --folder-color: rgb(166, 227, 161);
+}
+.nav-folder-children > .nav-folder,
+.nav-files-container > div > .nav-folder:nth-child(11n + 7) {
+  --folder-color: rgb(148, 226, 213);
+}
+.nav-folder-children > .nav-folder,
+.nav-files-container > div > .nav-folder:nth-child(11n + 8) {
+  --folder-color: rgb(137, 220, 235);
+}
+.nav-folder-children > .nav-folder,
+.nav-files-container > div > .nav-folder:nth-child(11n + 9) {
+  --folder-color: rgb(116, 199, 236);
+}
+.nav-folder-children > .nav-folder,
+.nav-files-container > div > .nav-folder:nth-child(11n + 10) {
+  --folder-color: rgb(135, 176, 249);
+}
+.nav-folder-children > .nav-folder,
+.nav-files-container > div > .nav-folder:nth-child(11n + 11) {
+  --folder-color: rgb(180, 190, 254);
+}
+.nav-folder-children > .nav-folder,
+.nav-files-container > div > .nav-folder:nth-child(11n + 12) {
+  --folder-color: rgb(203, 166, 247);
+}
+*/
+
+
+
+
+/* Общий стиль для основных папок */
+.nav-folder-children > .nav-folder,
+.nav-files-container > div > .nav-folder {
+  background-color: var(--folder-color);
+  --nav-item-color: black;
+  --nav-item-color-hover: black;
+  --nav-collapse-icon-color: black;
+  --nav-item-color-active: black;
+  border-radius: 10px;
+}
+
+
+/* Градиентное раскрашивание */
+.nav-folder-children > .nav-folder,
+.nav-files-container > div > .nav-folder {
+  background-color: var(--folder-color);
+  --nav-item-color: black;
+  --nav-item-color-hover: black;
+  --nav-collapse-icon-color: black;
+  --nav-item-color-active: black;
+  border-radius: 10px;
+}
+
+/* Затемнение при наведении */
+.nav-folder-children > .nav-folder:hover,
+.nav-files-container > div > .nav-folder:hover {
+  filter: brightness(0.9);
+}
+
+/* Градиентные оттенки фиолетового (20 оттенков) */
+.nav-folder-children > .nav-folder,
+.nav-files-container > div > .nav-folder:nth-child(20n + 1) {
+  --folder-color: #E5CCFF; /* 1-й оттенок - Светло-фиолетовый */
+}
+
+.nav-folder-children > .nav-folder,
+.nav-files-container > div > .nav-folder:nth-child(20n + 2) {
+  --folder-color: #DCD1F8; /* 2-й оттенок - Светлее фиолетового */
+}
+
+.nav-folder-children > .nav-folder,
+.nav-files-container > div > .nav-folder:nth-child(20n + 3) {
+  --folder-color: #D3B6F1; /* 3-й оттенок - Светло-лиловый */
+}
+
+.nav-folder-children > .nav-folder,
+.nav-files-container > div > .nav-folder:nth-child(20n + 4) {
+  --folder-color: #CAABEA; /* 4-й оттенок - Лиловый */
+}
+
+.nav-folder-children > .nav-folder,
+.nav-files-container > div > .nav-folder:nth-child(20n + 5) {
+  --folder-color: #C1A0E3; /* 5-й оттенок - Средний лиловый */
+}
+
+.nav-folder-children > .nav-folder,
+.nav-files-container > div > .nav-folder:nth-child(20n + 6) {
+  --folder-color: #B895DC; /* 6-й оттенок - Яркий фиолетовый */
+}
+
+.nav-folder-children > .nav-folder,
+.nav-files-container > div > .nav-folder:nth-child(20n + 7) {
+  --folder-color: #AF8AD5; /* 7-й оттенок - Интенсивный фиолетовый */
+}
+
+.nav-folder-children > .nav-folder,
+.nav-files-container > div > .nav-folder:nth-child(20n + 8) {
+  --folder-color: #A67FC6; /* 8-й оттенок - Фиолетовый */
+}
+
+.nav-folder-children > .nav-folder,
+.nav-files-container > div > .nav-folder:nth-child(20n + 9) {
+  --folder-color: #9D74C7; /* 9-й оттенок - Тёмный фиолетовый */
+}
+
+.nav-folder-children > .nav-folder,
+.nav-files-container > div > .nav-folder:nth-child(20n + 10) {
+  --folder-color: #9469C0; /* 10-й оттенок - Ярко-фиолетовый */
+}
+
+.nav-folder-children > .nav-folder,
+.nav-files-container > div > .nav-folder:nth-child(20n + 11) {
+  --folder-color: #8B5EB9; /* 11-й оттенок - Темно-фиолетовый */
+}
+
+.nav-folder-children > .nav-folder,
+.nav-files-container > div > .nav-folder:nth-child(20n + 12) {
+  --folder-color: #8253B2; /* 12-й оттенок - Глубокий фиолетовый */
+}
+
+.nav-folder-children > .nav-folder,
+.nav-files-container > div > .nav-folder:nth-child(20n + 13) {
+  --folder-color: #7948AB; /* 13-й оттенок - Очень тёмный фиолетовый */
+}
+
+.nav-folder-children > .nav-folder,
+.nav-files-container > div > .nav-folder:nth-child(20n + 14) {
+  --folder-color: #703DA4; /* 14-й оттенок - Почти чёрный фиолетовый */
+}
+
+.nav-folder-children > .nav-folder,
+.nav-files-container > div > .nav-folder:nth-child(20n + 15) {
+  --folder-color: #67329D; /* 15-й оттенок - Крепкий фиолетовый */
+}
+
+.nav-folder-children > .nav-folder,
+.nav-files-container > div > .nav-folder:nth-child(20n + 16) {
+  --folder-color: #5E2796; /* 16-й оттенок - Темно-фиолетовый */
+}
+
+.nav-folder-children > .nav-folder,
+.nav-files-container > div > .nav-folder:nth-child(20n + 17) {
+  --folder-color: #551C8F; /* 17-й оттенок - Очень тёмный фиолетовый */
+}
+
+.nav-folder-children > .nav-folder,
+.nav-files-container > div > .nav-folder:nth-child(20n + 18) {
+  --folder-color: #4C1188; /* 18-й оттенок - Почти чёрный фиолетовый */
+}
+
+.nav-folder-children > .nav-folder,
+.nav-files-container > div > .nav-folder:nth-child(20n + 19) {
+  --folder-color: #430681; /* 19-й оттенок - Очень тёмный фиолетовый */
+}
+
+.nav-folder-children > .nav-folder,
+.nav-files-container > div > .nav-folder:nth-child(20n + 20) {
+  --folder-color: #3F007F; /* 20-й оттенок - Самый тёмный фиолетовый (#3F007F) */
+}
+
+
+
+
+/* Окрашивание всех подпапок в один светлый фиолетовый оттенок */
+.nav-folder-children .nav-folder-children > .nav-folder,
+.nav-files-container .nav-folder-children > .nav-folder {
+  --folder-color: #e2d0f7; /* Выберите желаемый светлый фиолетовый оттенок */
+}
+
+
+.prompt {
+  border: solid var(--text-accent);
+  opacity: 0.9;
+}
+
+.suggestion-highlight {
+  text-decoration: none;
+  color: var(--text-accent);
+}
+
+.suggestion-item.is-selected {
+  border: solid var(--text-accent);
+  border-radius: 14px;
+}
+
+.suggestion-hotkey {
+  background-color: var(--text-accent);
+  color: black;
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+.prompt-instruction {
+  font-weight: 500;
+}
+
+.prompt-instruction-command {
+  background-color: rgb(250, 252, 255, 0.5);
+  color: black;
+  border-radius: 10px;
+  padding: 0 3px 0 3px;
+}
+
+
+
+
+
+
+.empty-state-container {
+  position: relative;
+  top: -15%;
+  left: 1%;
+}
+
+
+
+.empty-state-container:hover::before{
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' shape-rendering='auto' viewBox='0 0 100 100' width='250' height='300' class='logo-full'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='82.85' y1='30.41' x2='51.26' y2='105.9' gradientTransform='matrix(1, 0, 0, -1, -22.41, 110.97)' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%236c56cc'%3E%3C/stop%3E%3Cstop offset='1' stop-color='%239785e5'%3E%3C/stop%3E%3C/linearGradient%3E%3C/defs%3E%3Cpolygon points='62.61,0 30.91,17.52 18,45.45 37.57,90.47 65.35,100 70.44,89.8 81,26.39 62.61,0' fill='%2334208c'%3E%3C/polygon%3E%3Cpolygon points='81,26.39 61.44,14.41 34.43,35.7 65.35,100 70.44,89.8 81,26.39' fill='url(%23a)'%3E%3C/polygon%3E%3Cpolygon points='81,26.39 81,26.39 62.61,0 61.44,14.41 81,26.39' fill='%23af9ff4'%3E%3C/polygon%3E%3Cpolygon points='61.44,14.41 62.61,0 30.91,17.52 34.43,35.7 61.44,14.41' fill='%234a37a0'%3E%3C/polygon%3E%3Cpolygon points='34.43,35.7 37.57,90.47 65.35,100 34.43,35.7' fill='%234a37a0'%3E%3C/polygon%3E%3C/svg%3E");
+  opacity: 100%;
+  transition: opacity 1000ms cubic-bezier(0, 0.2, 0.8, 1);
+  position: relative;
+  z-index: 1;
+}
+
+.empty-state-container:not(:hover)::before {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' shape-rendering='auto' viewBox='0 0 100 100' width='250' height='300' class='logo-full'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='82.85' y1='30.41' x2='51.26' y2='105.9' gradientTransform='matrix(1, 0, 0, -1, -22.41, 110.97)' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%236c56cc'%3E%3C/stop%3E%3Cstop offset='1' stop-color='%239785e5'%3E%3C/stop%3E%3C/linearGradient%3E%3C/defs%3E%3Cpolygon points='62.61,0 30.91,17.52 18,45.45 37.57,90.47 65.35,100 70.44,89.8 81,26.39 62.61,0' fill='%2334208c'%3E%3C/polygon%3E%3Cpolygon points='81,26.39 61.44,14.41 34.43,35.7 65.35,100 70.44,89.8 81,26.39' fill='url(%23a)'%3E%3C/polygon%3E%3Cpolygon points='81,26.39 81,26.39 62.61,0 61.44,14.41 81,26.39' fill='%23af9ff4'%3E%3C/polygon%3E%3Cpolygon points='61.44,14.41 62.61,0 30.91,17.52 34.43,35.7 61.44,14.41' fill='%234a37a0'%3E%3C/polygon%3E%3Cpolygon points='34.43,35.7 37.57,90.47 65.35,100 34.43,35.7' fill='%234a37a0'%3E%3C/polygon%3E%3C/svg%3E");
+  opacity: 0%;
+  transition: opacity 1300ms cubic-bezier(0, 0.2, 0.8, 1);
+  position: relative;
+  z-index: 1;
+}
+
+.empty-state-title {
+  position: absolute;
+  top: -7.2%;
+  left: 0.2%;
+  z-index: 0;
+  color: var(--background-primary);
+}
+
+
+
+.theme-dark .empty-state-title {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' shape-rendering='auto' viewBox='0 0 100 100' width='250' height='300' fill='none' stroke='gray' stroke-width='0.5' stroke-linecap='round' stroke-linejoin='bevel' class='logo-wireframe'%3E%3Cpath d='M 30.91 17.52 L 34.43 35.7 M 61.44 14.41 L 62.61 0 M 34.43 35.7 L 37.57 90.47 M 81 26.39 L 61.44 14.41 L 34.43 35.7 L 65.35 100 M 62.61 0 L 30.91 17.52 L 18 45.45 L 37.57 90.47 L 65.35 100 L 70.44 89.8 L 81 26.39 L 62.61 0 Z'%3E%3C/path%3E%3C/svg%3E");
+  opacity: 40%;
+}
+
+.theme-light .empty-state-title {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' shape-rendering='auto' viewBox='0 0 100 100' width='250' height='300' fill='none' stroke='rgb(0, 0, 0)' stroke-width='2' stroke-linecap='round' stroke-linejoin='bevel' class='logo-wireframe'%3E%3Cpath d='M 30.91 17.52 L 34.43 35.7 M 61.44 14.41 L 62.61 0 M 34.43 35.7 L 37.57 90.47 M 81 26.39 L 61.44 14.41 L 34.43 35.7 L 65.35 100 M 62.61 0 L 30.91 17.52 L 18 45.45 L 37.57 90.47 L 65.35 100 L 70.44 89.8 L 81 26.39 L 62.61 0 Z'%3E%3C/path%3E%3C/svg%3E");
+  opacity: 10%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ *
+ * T *his is an Obsidian Snippet to apply a skin to the Graph View
+ *
+ * -------------------------------------------------------------
+ *
+ * Graph View
+ * Circle When Not Hover
+ * Circle When Hover
+ * Line When Hover
+ * Circle Stroke
+ * Circle When Link Unresolved
+ * Tags
+ * Arrows
+ *
+ * -------------------------------------------------------------
+ *
+ */
+
+/***************************************/
+/*             Graph View              */
+/***************************************/
+/* Circle Stroke */
+/* Line When Hover */
+.graph-view.color-circle,
+.graph-view.color-line-highlight {
+  color: #420ed2;
+  border: 0;
+}
+/* Circle When Hover */
+.graph-view.color-fill-highlight {
+  color: #420ed2;
+}
+.graph-view.color-text {
+  color: #8163d4;
+}
+.graph-view.color-line {
+  color: #6272a4;
+}
+/* Circle When Not Hover */
+.graph-view.color-fill {
+  color: #8163d4;
+}
+/* Arrows */
+.theme-light .graph-view.color-arrow,
+.theme-dark .graph-view.color-arrow {
+  color: #5b2ed9;
+}
+/* Tags */
+.theme-light .graph-view.color-fill-tag,
+.theme-dark .graph-view.color-fill-tag {
+  color: #ffb86c;
+}
+/* Attachments */
+.theme-light .graph-view.color-fill-attachment,
+.theme-dark .graph-view.color-fill-attachment {
+  color: #ff5555;
+}
+/* Circle When Link Unresolved */
+.theme-light .graph-view.color-fill-unresolved,
+.theme-dark .graph-view.color-fill-unresolved {
+  color: #6272a4;
+}
+.workspace-leaf-content[data-type=graph] .view-content {
+  background-color: #252426;
+}
+
+
+
+
+
+
+
+
