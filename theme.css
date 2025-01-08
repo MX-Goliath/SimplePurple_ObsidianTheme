@@ -4,6 +4,21 @@
 /* ------------------------------
  *   H1 в режиме предпросмотра
  * ------------------------------ */
+
+.inline-title {
+  color: #cda5fa;
+/*   font-size: 1.2em; */
+/*   font-weight: 200; */
+  /* whatever else */
+}
+/* Стилизация названия заметки */
+.view-header-title-container {
+  color: #b06aff !important;
+  font-weight: bold;
+}
+
+
+
 /* -- H1 в Preview Mode (красивая полоса на всю ширину) -- */
 /* -- H1 в Preview Mode -- */
 .markdown-preview-view h1 {
@@ -57,7 +72,86 @@
 }*/
 
 
+/*.callout{
+  border: 1px solid var(--color-callout-border-teal);
+  background: var(--color-callout-teal);
+}*/
+/*.callout{
+  border: 3px solid #ccb3d1;
+  background: linear-gradient(90deg, #22052d 0%, #ccb3d1 200%);
+}*/
+.callout{
+ border: 3px solid #854ac7;
+ background: #312540;
+ }
+/*.callout{
+  color: #000000;
+}*/
+.callout-title {
+  color: #c79bfa;
+}
 
+/*# sourceMappingURL=anuppuccin-sleek-callout.css.map */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ a *uthor: ApolloGoneRogue
+ source: https://forum.obsidian.md/t/how-to-achieve-css-code-snippets/8474/244?u
+ */
+
+/* This snippet provides a style to blockquotes and to the <cite> element. */
+
+/* for preview */
+.markdown-preview-view blockquote {
+  border-color: #854ac7 !important;
+  border-left-width: 2px !important;
+  background-image: linear-gradient(
+    to right,
+    rgba(133, 74, 199, 0.1),
+    rgba(133, 74, 199, 0)
+  );
+  font-size: 1em;
+  line-height: 1.5em;
+  margin: auto;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 15px;
+  width: 100%;
+}
+
+.markdown-preview-view blockquote {
+  position: relative;
+}
+
+/*.markdown-preview-view blockquote:after {
+  content: "\275D";
+  position: absolute;
+  top: 0.4em;
+  left: -1em;
+  font-size: 2.5em;
+  color: #854ac7;
+}*/
+
+cite {
+  color: #854ac7;
+  text-align: end;
+  display: block;
+}
 
 /* Скругление краев изображений */
 img {
